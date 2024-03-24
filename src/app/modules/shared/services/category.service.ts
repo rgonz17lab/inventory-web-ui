@@ -13,7 +13,7 @@ export class CategoryService {
   /**
    * get all categories
    */
-  getCategories(){
+  getCategories() {
 
     const endpoint = `${base_url}/categories`;
     return this.http.get(endpoint);
@@ -24,10 +24,10 @@ export class CategoryService {
    * Save Category
    * @param body 
    */
-  saveCategorie(body: any){
+  saveCategorie(body: any) {
     const endpoint = `${base_url}/categories`;
     return this.http.post(endpoint, body);
-  }  
+  }
 
   /**
    * 
@@ -35,9 +35,9 @@ export class CategoryService {
    * @param id 
    * @returns Update Categorie
    */
-  updateCategorie(body: any, id: any){
+  updateCategorie(body: any, id: any) {
     const endpoint = `${base_url}/categories/${id}`;
-    return this.http.put(endpoint, body)
+    return this.http.put(endpoint, body);
   }
 
   /**
@@ -45,9 +45,15 @@ export class CategoryService {
    * @param id 
    * @returns Delete Categorie
    */
-  deleteCategorie(id: any){
+  deleteCategorie(id: any) {
     const endpoint = `${base_url}/categories/${id}`;
-    return this.http.delete(endpoint, id)
+    return this.http.delete(endpoint, id);
   }
-   
+
+  getCategorieById(id: any) {
+    const endpoint = `${base_url}/categories/${id}`;
+    return this.http.get(endpoint, id);
+  }
+
+
 }
